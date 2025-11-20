@@ -34,14 +34,15 @@ These features form the basis of my analysis and model training.
 
 ---
 
-## 📁 Project Structure
+📁 Project Structure
 
-├── German_Credit_Risk_Modelling.ipynb # Main notebook
-├── german_credit_data.csv # Dataset
-├── modeling.py # ML model training code
-├── risk_metrics.py # PD, EL, and risk metrics
-├── README.md # Documentation
-└── data_preprocessing.py (optional) # Preprocessing utilities
+├── German_Credit_Risk_Modelling.ipynb          # Main notebook
+├── german_credit_data.csv                      # Dataset
+├── modeling.py                                 # ML model training code
+├── risk_metrics.py                             # PD, EL, and risk metrics
+├── README.md                                   # Documentation
+└── data_preprocessing.py (optional)            # Preprocessing utilities
+
 
 yaml
 Copy code

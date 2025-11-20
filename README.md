@@ -8,8 +8,8 @@ This project represents my complete end-to-end workflow for modelling credit ris
 
 Through this project, I aimed to answer three key questions:
 
-1. **Which customer and financial characteristics influence good vs bad credit?**  
-2. **Which machine learning model performs best for predicting credit risk?**  
+1. **Which customer and financial characteristics influence good vs bad credit?**
+2. **Which machine learning model performs best for predicting credit risk?**
 3. **How can PD, EL, and risk segmentation be used to identify high-risk customers?**
 
 ---
@@ -34,18 +34,15 @@ These features form the basis of my analysis and model training.
 
 ---
 
-📁 Project Structure
+## 📁 Project Structure
 
-├── German_Credit_Risk_Modelling.ipynb          # Main notebook
-├── german_credit_data.csv                      # Dataset
-├── modeling.py                                 # ML model training code
-├── risk_metrics.py                             # PD, EL, and risk metrics
-├── README.md                                   # Documentation
-└── data_preprocessing.py (optional)            # Preprocessing utilities
+├── German_Credit_Risk_Modelling.ipynb # Main notebook
+├── german_credit_data.csv # Dataset
+├── modeling.py # ML model training code
+├── risk_metrics.py # PD, EL, and risk metrics
+├── README.md # Documentation
+└── data_preprocessing.py (optional) # Preprocessing utilities
 
-
-yaml
-Copy code
 
 ---
 
@@ -93,7 +90,7 @@ In the notebook, I performed:
 - Count plots for categorical variables (Sex, Job, Housing, Saving accounts, Checking account, Purpose)  
 - Scatter plots and correlation heatmaps  
 
-I also built a **synthetic risk score** using Credit Amount, Duration, savings, checking account status, housing, and purpose. This was converted into a binary Target (0 = good, 1 = bad) for modelling.
+I also built a synthetic risk score using Credit Amount, Duration, savings, checking account status, housing, and purpose. This was converted into a binary Target variable (0 = good, 1 = bad) for modelling.
 
 ---
 
@@ -118,13 +115,18 @@ The model with the **highest AUC** was chosen as the best predictor of credit ri
 ### **3️⃣ PD, EL, and identifying high-risk customers**
 
 Using the best model:
-- I computed **Probability of Default (PD)** for each customer  
-- Then calculated **Expected Loss (EL = PD × LGD × EAD)**  
-  - EAD = Credit Amount  
-  - LGD = 45%  
+- I computed Probability of Default (PD) for each customer  
+- Then calculated Expected Loss using:
+
+EL = PD × LGD × EAD
+
+
+Where:
+- **EAD** = Credit Amount  
+- **LGD** = 45%  
 
 I sorted customers by EL to identify those who pose the highest financial risk.  
-I also created **Low / Medium / High** PD-based risk segments.
+I also created Low, Medium, and High PD-based risk segments.
 
 ---
 
@@ -134,27 +136,21 @@ I also created **Low / Medium / High** PD-based risk segments.
 git clone <your-repo-url>
 cd <your-repo-folder>
 
-markdown
-Copy code
 
 ### **Step 2: Install all dependencies**
 pip install -r requirements.txt
 
-markdown
-Copy code
 
 ### **Step 3: Run the notebook**
 Open and execute:
 - `German_Credit_Risk_Modelling.ipynb`
 
-Make sure `german_credit_data.csv` is available in the same directory.
+Ensure `german_credit_data.csv` is available in the correct directory.
 
 ### **Step 4 (Optional): Import helper modules**
 import modeling
 import risk_metrics
 
-yaml
-Copy code
 
 ---
 
@@ -179,7 +175,7 @@ These can be listed in a `requirements.txt` file.
 In future extensions of this project, I plan to:
 
 - Add SHAP value explanations for model interpretability  
-- Use GridSearchCV for model hyperparameter tuning  
+- Use GridSearchCV for hyperparameter tuning  
 - Build a Streamlit dashboard for PD & EL visualisation  
 - Add calibration metrics and reliability diagrams for better model evaluation  
 

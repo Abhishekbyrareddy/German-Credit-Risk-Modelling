@@ -34,18 +34,6 @@ These features form the basis of my analysis and model training.
 
 ---
 
-## 📁 Project Structure
-
-├── German_Credit_Risk_Modelling.ipynb # Main notebook
-├── german_credit_data.csv # Dataset
-├── modeling.py # ML model training code
-├── risk_metrics.py # PD, EL, and risk metrics
-├── README.md # Documentation
-└── data_preprocessing.py (optional) # Preprocessing utilities
-
-
----
-
 ## ⚙️ modeling.py
 
 This file contains all machine learning model development and evaluation steps.
@@ -146,11 +134,6 @@ Open and execute:
 - `German_Credit_Risk_Modelling.ipynb`
 
 Ensure `german_credit_data.csv` is available in the correct directory.
-
-### **Step 4 (Optional): Import helper modules**
-import modeling
-import risk_metrics
-
 
 ---
 
